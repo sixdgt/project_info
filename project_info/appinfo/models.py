@@ -23,7 +23,7 @@ class AcademicDetail(models.Model):
     position_category = models.CharField(max_length=200)
     start_year = models.DateField()
     end_year = models.DateField(null=True, blank=True)
-    student = models.ForeignKey(StudentDetail, on_delete=models.CASCADE)
+    student = models.ForeignKey(StudentDetail, on_delete=models.CASCADE, default=None)
 
     class Meta:
         db_table = "academic_detail"
@@ -35,7 +35,7 @@ class TrainingDetail(models.Model):
     duration = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
-    student = models.ForeignKey(StudentDetail, on_delete=models.CASCADE)
+    student = models.ForeignKey(StudentDetail, on_delete=models.CASCADE, default=None)
 
     class Meta:
         db_table = "training_detail"
