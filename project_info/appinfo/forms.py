@@ -1,4 +1,5 @@
-from django.forms import PasswordInput, forms
+from django.forms import PasswordInput
+from django import forms
 
 from appinfo.models import StudentDetail
 
@@ -10,6 +11,7 @@ class StudentDetailForm(forms.ModelForm):
         model = StudentDetail
 
 class StudentLoginForm(forms.ModelForm):
+    password = forms.CharField(widget=PasswordInput)
     class Meta:
         fields = ("email", "password")
         model = StudentDetail
